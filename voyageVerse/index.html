@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VoyageVerse - Explore the World</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">🌍 Voyage Verse</div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="wishlist.html">Wishlist</a></li>
+          <li><a href="destinations.html">Destination</a></li>
+          <li><a href="weather.html">Weather</a></li>
+          <li><a href="tools.html">Tools</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1>Welcome to VoyageVerse</h1>
+      <p>Explore, dream, and plan your next big adventure</p>
+      <a href="wishlist.html" class="hero-btn">Start Your Journey</a>
+    </section>
+
+    <section class="featured">
+      <h2>Featured Destinations</h2>
+      <div class="destination-grid">
+        <!-- Paris Card -->
+        <div class="destination-card">
+          <div class="card-carousel">
+            <div class="card-track">
+              <img
+                src="https://a.cdn-hotels.com/gdcs/production169/d86/6e1a6078-2b54-403b-b23e-63690ff86069.jpg"
+                alt="Paris 1"
+              />
+              <img
+                src="https://onceuponajrny.com/wp-content/uploads/2019/08/Paris-Photography-A-List-of-the-Best-Paris-Photo-Spots-Map.jpg"
+                alt="Paris 2"
+              />
+              <img
+                src="https://media.timeout.com/images/106181719/750/562/image.jpg"
+                alt="Paris 3"
+              />
+            </div>
+            <button class="card-btn prev">&#10094;</button>
+            <button class="card-btn next">&#10095;</button>
+          </div>
+          <h3>Paris, France</h3>
+          <p>The city of lights, love, and unforgettable memories.</p>
+          <button
+            class="wishlist-btn"
+            onclick="addToWishlist('Paris, France', 'https://a.cdn-hotels.com/gdcs/production169/d86/6e1a6078-2b54-403b-b23e-63690ff86069.jpg', 'The city of lights, love, and unforgettable memories.')"
+          >
+            ❤️ Add to Wishlist
+          </button>
+        </div>
+
+        <!-- Kyoto Card -->
+        <div class="destination-card">
+          <div class="card-carousel">
+            <div class="card-track">
+              <img
+                src="https://bizarrejourneys.com/wp-content/uploads/2023/09/2-1.jpg"
+                alt="Kyoto 1"
+              />
+              <img
+                src="http://www.outthere.travel/wp-content/uploads/2016/09/Kyoto4.jpg"
+                alt="Kyoto 2"
+              />
+              <img
+                src="https://wallpapers.com/images/hd/kyoto-fuji-san-view-dxo42w3pchmqmdrn.jpg"
+                alt="Kyoto 3"
+              />
+              <!-- Add more Kyoto images if needed -->
+            </div>
+            <button class="card-btn prev">&#10094;</button>
+            <button class="card-btn next">&#10095;</button>
+          </div>
+          <h3>Kyoto, Japan</h3>
+          <p>Experience timeless traditions and breathtaking temples.</p>
+          <button
+            class="wishlist-btn"
+            onclick="addToWishlist('Kyoto, Japan','https://bizarrejourneys.com/wp-content/uploads/2023/09/2-1.jpg', 'Experience timeless traditions and breathtaking temples.')"
+          >
+            ❤️ Add to Wishlist
+          </button>
+        </div>
+
+        <!-- Bali Card -->
+        <div class="destination-card">
+          <div class="card-carousel">
+            <div class="card-track">
+              <img
+                src="https://1.bp.blogspot.com/-56nuuQxXhbY/VvFDvKrXkbI/AAAAAAAAAKo/WtI3OxUk0NwM_SV9KRJ9XeGiO8ISgb2MA/s1600/bali1.jpg"
+                alt="Bali 1"
+              />
+              <img
+                src="http://static1.squarespace.com/static/63a162ea8ae00d39baefb4ff/t/640e8a83fae98325cef67ce7/1678674571029/unsplash-image-XQwjDZJbNUg.jpg?format=1500w"
+                alt="Bali 2"
+              />
+              <img
+                src="https://www.balihonestdriver.com/wp-content/uploads/2020/02/main-bali-waterfall-mobile.jpg"
+                alt="Bali 3"
+              />
+              <!-- Add more Bali images if needed -->
+            </div>
+            <button class="card-btn prev">&#10094;</button>
+            <button class="card-btn next">&#10095;</button>
+          </div>
+          <h3>Bali, Indonesia</h3>
+          <p>Relax on pristine beaches surrounded by lush jungles.</p>
+          <button
+            class="wishlist-btn"
+            onclick="addToWishlist(
+    'Bali, Indonesia',
+    'https://1.bp.blogspot.com/-56nuuQxXhbY/VvFDvKrXkbI/AAAAAAAAAKo/WtI3OxUk0NwM_SV9KRJ9XeGiO8ISgb2MA/s1600/bali1.jpg',
+    'Relax on pristine beaches surrounded by lush jungles.'
+  )"
+          >
+            ❤️ Add to Wishlist
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 VoyageVerse. Crafted with 💙 by Tanishka.</p>
+    </footer>
+
+    <!-- Carousel JS -->
+    <script>
+      document.querySelectorAll(".card-carousel").forEach((carousel) => {
+        const track = carousel.querySelector(".card-track");
+        const images = track.querySelectorAll("img");
+        const prevBtn = carousel.querySelector(".card-btn.prev");
+        const nextBtn = carousel.querySelector(".card-btn.next");
+        let index = 0;
+
+        function updateSlide() {
+          const width = images[0].clientWidth;
+          track.style.transform = `translateX(-${index * width}px)`;
+        }
+
+        nextBtn.addEventListener("click", () => {
+          index = (index + 1) % images.length;
+          updateSlide();
+        });
+
+        prevBtn.addEventListener("click", () => {
+          index = (index - 1 + images.length) % images.length;
+          updateSlide();
+        });
+
+        window.addEventListener("resize", updateSlide);
+      });
+      function addToWishlist(name, image, description) {
+        const destination = { name, image, description };
+        let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+        const alreadyAdded = wishlist.some((item) => item.name === name);
+        if (!alreadyAdded) {
+          wishlist.push(destination);
+          localStorage.setItem("wishlist", JSON.stringify(wishlist));
+          alert(`${name} has been added to your wishlist!`);
+        } else {
+          alert(`${name} is already in your wishlist.`);
+        }
+      }
+    </script>
+  </body>
+</html>

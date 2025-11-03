@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Destinations - VoyageVerse</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">🌍 VoyageVerse</div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="wishlist.html">Wishlist</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="weather.html">Weather</a></li>
+          <li><a href="tools.html">Tools</a></li>
+        </ul>
+      </nav>
+    </header>
+    <h1>Explore Destinations</h1>
+    <!-- Search Bar-->
+    <div class="search-container">
+      <input
+        type="text"
+        id="search-input"
+        placeholder="Search for a destination..."
+      />
+      <button onclick="searchDestination()">Search</button>
+    </div>
+
+    <!-- Main Destination Section -->
+    <main class="destination-section">
+      <div class="destination-grid" id="destination-grid">
+        <!-- Preloaded Cards -->
+        <div class="destination-card">
+          <img
+            src="https://assets.editorial.aetnd.com/uploads/2019/03/topic-london-gettyimages-760251843-feature.jpg"
+            alt="London"
+          />
+          <h3>London, UK</h3>
+          <p>Where history meets modern elegance along the River Thames.</p>
+          <button
+            class="wishlist-btn"
+            onclick="addToWishlist('London, UK', 'https://assets.editorial.aetnd.com/uploads/2019/03/topic-london-gettyimages-760251843-feature.jpg', 'Where history meets modern elegance along the River Thames.')"
+          >
+            ❤️ Add to Wishlist
+          </button>
+        </div>
+
+        <div class="destination-card">
+          <img
+            src="https://media.architecturaldigest.com/photos/5cdadfa704c41e74349a8438/master/pass/GettyImages-931933966.jpg"
+            alt="New York"
+          />
+          <h3>New York, USA</h3>
+          <p>
+            The city that never sleeps, full of culture, lights, and dreams.
+          </p>
+          <button
+            class="wishlist-btn"
+            onclick="addToWishlist('New York, USA', 'https://media.architecturaldigest.com/photos/5cdadfa704c41e74349a8438/master/pass/GettyImages-931933966.jpg', 'The city that never sleeps, full of culture, lights, and dreams.')"
+          >
+            ❤️ Add to Wishlist
+          </button>
+        </div>
+
+        <div class="destination-card">
+          <img
+            src="https://i.pinimg.com/originals/ba/11/8f/ba118fd82d7289363982121d6b12ca2b.jpg"
+            alt="Cairo"
+          />
+          <h3>Cairo, Egypt</h3>
+          <p>Home of the ancient pyramids and the mystique of the Nile.</p>
+          <button
+            class="wishlist-btn"
+            onclick="addToWishlist('Cairo, Egypt', 'https://i.pinimg.com/originals/ba/11/8f/ba118fd82d7289363982121d6b12ca2b.jpg', 'Home of the ancient pyramids and the mystique of the Nile.')"
+          >
+            ❤️ Add to Wishlist
+          </button>
+        </div>
+        <div class="destination-card">
+          <img
+            src="https://1.bp.blogspot.com/-56nuuQxXhbY/VvFDvKrXkbI/AAAAAAAAAKo/WtI3OxUk0NwM_SV9KRJ9XeGiO8ISgb2MA/s1600/bali1.jpg"
+            alt="Bali"
+          />
+          <h3>Bali, Indonesia</h3>
+          <p>Relax on pristine beaches surrounded by lush jungles.</p>
+          <button
+            class="wishlist-btn"
+            onclick="addToWishlist('Bali, Indonesia', 'https://1.bp.blogspot.com/-56nuuQxXhbY/VvFDvKrXkbI/AAAAAAAAAKo/WtI3OxUk0NwM_SV9KRJ9XeGiO8ISgb2MA/s1600/bali1.jpg', 'Relax on pristine beaches surrounded by lush jungles.')"
+          >
+            ❤️ Add to Wishlist
+          </button>
+        </div>
+
+        <div class="destination-card">
+          <img
+            src="https://bizarrejourneys.com/wp-content/uploads/2023/09/2-1.jpg"
+            alt="Kyoto"
+          />
+          <h3>Kyoto, Japan</h3>
+          <p>Experience timeless traditions and breathtaking temples.</p>
+          <button
+            class="wishlist-btn"
+            onclick="addToWishlist('Kyoto, Japan', 'https://bizarrejourneys.com/wp-content/uploads/2023/09/2-1.jpg', 'Experience timeless traditions and breathtaking temples.')"
+          >
+            ❤️ Add to Wishlist
+          </button>
+        </div>
+
+        <div class="destination-card">
+          <img
+            src="https://media.timeout.com/images/106181719/750/562/image.jpg"
+            alt="Paris"
+          />
+          <h3>Paris, France</h3>
+          <p>The city of lights, love, and unforgettable memories.</p>
+          <button
+            class="wishlist-btn"
+            onclick="addToWishlist('Paris, France', 'https://media.timeout.com/images/106181719/750/562/image.jpg', 'The city of lights, love, and unforgettable memories.')"
+          >
+            ❤️ Add to Wishlist
+          </button>
+        </div>
+
+        <div class="destination-card">
+          <img
+            src="https://www.italyperfect.com/blog/wp-content/uploads/2021/05/italy-perfect-ponte-sant-angelo-rome.jpg"
+            alt="Rome"
+          />
+          <h3>Rome, Italy</h3>
+          <p>
+            Explore the Eternal City with ancient ruins and Renaissance art.
+          </p>
+          <button
+            class="wishlist-btn"
+            onclick="addToWishlist('Rome, Italy', 'https://www.italyperfect.com/blog/wp-content/uploads/2021/05/italy-perfect-ponte-sant-angelo-rome.jpg', 'Explore the Eternal City with ancient ruins and Renaissance art.')"
+          >
+            ❤️ Add to Wishlist
+          </button>
+        </div>
+
+        <div class="destination-card">
+          <img
+            src="https://www.tripsavvy.com/thmb/8VKOZbYhKRecUgdgmwfKsFlw2f8=/4208x2366/filters:fill(auto,1)/spain--barcelona--panoramic-view-of-barcelona-cathedral-735895859-599aedf7685fbe0010120fc1.jpg"
+            alt="Barcelona"
+          />
+          <h3>Barcelona, Spain</h3>
+          <p>A city alive with art, architecture, and Mediterranean beaches.</p>
+          <button
+            class="wishlist-btn"
+            onclick="addToWishlist('Barcelona, Spain', 'https://www.tripsavvy.com/thmb/8VKOZbYhKRecUgdgmwfKsFlw2f8=/4208x2366/filters:fill(auto,1)/spain--barcelona--panoramic-view-of-barcelona-cathedral-735895859-599aedf7685fbe0010120fc1.jpg', 'A city alive with art, architecture, and Mediterranean beaches.')"
+          >
+            ❤️ Add to Wishlist
+          </button>
+        </div>
+
+        <div class="destination-card">
+          <img
+            src="https://www.fodors.com/wp-content/uploads/2021/05/07_UltimateChicago__ChicagoRiverCruise_shutterstock_1908090622-1200x800.jpg"
+            alt="Chicago"
+          />
+          <h3>Chicago, USA</h3>
+          <p>
+            The Windy City known for its skyline, jazz, and deep-dish pizza.
+          </p>
+          <button
+            class="wishlist-btn"
+            onclick="addToWishlist('Chicago, USA', 'https://www.fodors.com/wp-content/uploads/2021/05/07_UltimateChicago__ChicagoRiverCruise_shutterstock_1908090622-1200x800.jpg', 'The Windy City known for its skyline, jazz, and deep-dish pizza.')"
+          >
+            ❤️ Add to Wishlist
+          </button>
+        </div>
+
+        <div class="destination-card">
+          <img
+            src="https://media.timeout.com/images/105658195/750/562/image.jpg"
+            alt="Bangkok"
+          />
+          <h3>Bangkok, Thailand</h3>
+          <p>
+            A vibrant city full of ornate temples, street food, and nightlife.
+          </p>
+          <button
+            class="wishlist-btn"
+            onclick="addToWishlist('Bangkok, Thailand', 'https://media.timeout.com/images/105658195/750/562/image.jpg', 'A vibrant city full of ornate temples, street food, and nightlife.')"
+          >
+            ❤️ Add to Wishlist
+          </button>
+        </div>
+        <div class="destination-card">
+          <img
+            src="https://images.travelandleisureasia.com/wp-content/uploads/sites/2/2023/11/29111159/lauterbrunnen.jpeg"
+            alt="Switzerland"
+          />
+          <h3>Switzerland</h3>
+          <p>A land of stunning alpine views, snowy peaks, and serene lakes.</p>
+          <button
+            class="wishlist-btn"
+            onclick="addToWishlist('Switzerland', 'https://images.travelandleisureasia.com/wp-content/uploads/sites/2/2023/11/29111159/lauterbrunnen.jpeg', 'A land of stunning alpine views, snowy peaks, and serene lakes.')"
+          >
+            ❤️ Add to Wishlist
+          </button>
+        </div>
+
+        <div class="destination-card">
+          <img
+            src="https://i0.wp.com/www.diextr.com/wp-content/uploads/2021/03/Clock-house-scaled.jpeg?resize=1024%2C576&ssl=1"
+            alt="Mystic Falls"
+          />
+          <h3>Mystic Falls, Colorado</h3>
+          <p>
+            A mysterious town full of charm, legends, and supernatural tales.
+          </p>
+          <button
+            class="wishlist-btn"
+            onclick="addToWishlist('Mystic Falls', 'https://i0.wp.com/www.diextr.com/wp-content/uploads/2021/03/Clock-house-scaled.jpeg?resize=1024%2C576&ssl=1', 'A mysterious town full of charm, legends, and supernatural tales.')"
+          >
+            ❤️ Add to Wishlist
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 VoyageVerse. Crafted with 💙 by Tanishka.</p>
+    </footer>
+    <script>
+        async function searchDestination() {
+          const query = document.getElementById("search-input").value.trim();
+          if (!query) return;
+      
+          const destinationGrid = document.getElementById("destination-grid");
+          const normalizedQuery = query.toLowerCase().replace(/[^a-z0-9]/gi, "");
+      
+          // Check if already exists in the grid
+          const existingCards = destinationGrid.querySelectorAll(".destination-card");
+          for (let card of existingCards) {
+            const name = card.querySelector("h3")?.innerText || "";
+            const normalizedName = name.toLowerCase().replace(/[^a-z0-9]/gi, "");
+            if (normalizedName === normalizedQuery) {
+              alert(`${query} is already shown.`);
+              return;
+            }
+          }
+      
+          // FETCH IMAGE FROM UNSPLASH (this must be outside the loop)
+          const accessKey = "MhYioq_TpcCouVjNKgo7nsSHbKuZFwq3U6BfwARILqk";
+          const response = await fetch(
+            `https://api.unsplash.com/search/photos?query=${query}&client_id=${accessKey}`
+          );
+          const data = await response.json();
+      
+          if (!data.results.length) {
+            alert("No results found.");
+            return;
+          }
+      
+          const image = data.results[0].urls.regular;
+          const name = query.charAt(0).toUpperCase() + query.slice(1);
+          const description = `Discover the wonders of ${name}!`;
+      
+          const card = document.createElement("div");
+          card.className = "destination-card";
+          card.innerHTML = `
+            <img src="${image}" alt="${name}">
+            <h3>${name}</h3>
+            <p>${description}</p>
+            <button class="wishlist-btn" onclick="addToWishlist('${name}', '${image}', '${description}')">❤️ Add to Wishlist</button>
+          `;
+          destinationGrid.appendChild(card);
+        }
+      
+        function addToWishlist(name, image, description) {
+          const destination = { name, image, description };
+          let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+      
+          const alreadyExists = wishlist.some((item) => item.name === name);
+          if (alreadyExists) {
+            alert(`${name} is already in your wishlist.`);
+            return;
+          }
+      
+          wishlist.push(destination);
+          localStorage.setItem("wishlist", JSON.stringify(wishlist));
+          alert(`${name} has been added to your wishlist!`);
+        }
+      </script>      
+  </body>
+</html>

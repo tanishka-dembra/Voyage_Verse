@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Wishlist - VoyageVerse</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">🌍 VoyageVerse</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</li></a>
+                <li><a href="wishlist.html">Wishlist</li></a>
+                <li><a href="destinations.html">Destinations</li></a>
+                <li><a href="weather.html">Weather</li></a>
+                <li><a href="tools.html">Tools</li></a>
+            </ul>
+        </nav>
+    </header>
+    <main class="wishlist-container">
+        <h1>My Wishlist ✨</h1>
+        <div id="wishlist-items" class="destination-grid"></div>
+    </main>
+    <footer>
+        <p>&copy;2025 VoyageVerse. Crafted with 💙 by Tanishka.</p>
+    </footer>
+    <script>
+        const wishlistContainer = document.getElementById("wishlist-items");
+        const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+        if(wishlist.length === 0){
+            wishlistContainer.innerHTML = "<p>Your wishlist is empty. Start exploring";
+        }
+        else{
+           wishlist.forEach((item,index)=>{
+            const card = document.createElement("div");
+            card.className = "destination-card";
+            card.innerHTML = `
+            <img src = "${item.image}" alt="${item.name}" />
+            <h3>${item.name}</h3>
+            <p>${item.description}</p>
+            <button onclick="removeFromWishlist(${index})">🗑️ Remove</button>
+            `;
+            wishlistContainer.appendChild(card);
+           });
+        }
+        function removeFromWishlist(index){
+            wishlist.splice(index,1);
+            localStorage.setItem("wishlist",JSON.stringify(wishlist));
+            location.reload();
+        }
+    </script>
+</body>
+</html>
